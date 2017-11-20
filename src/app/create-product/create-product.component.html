@@ -1,0 +1,15 @@
+<div class="container">
+  <h3>Create a New Product</h3>
+  <form (submit)="onSubmit()" #formData="ngForm">
+    <div class="form-group">
+      <label>Title:</label><input type="text" name="title" required minlength="3" [(ngModel)]="newProduct.title">
+    </div>
+    <div class="form-group">
+      <label>Price:</label><input type="text" name="price" required [(ngModel)]="newProduct.price">
+    </div>
+    <div class="form-group">
+    <label>Image Url:</label><input type="text" name="imgUrl" [(ngModel)]="newProduct.imgUrl">
+    </div>
+    <button [disabled]="!formData.valid" class="btn btn-info" type="submit">Create</button>
+  </form>
+</div>
